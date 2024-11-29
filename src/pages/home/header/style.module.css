@@ -1,0 +1,36 @@
+.header {
+  background-color: #fff;
+  position: relative;
+}
+
+.topbar {
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.topbar .topleft {
+  display: flex;
+  justify-content: start;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    justify-content: center;
+  }
+}
+
+.topbar .topright {
+  display: flex;
+  justify-content: end;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    justify-content: center;
+  }
+}
+
+.topIcon {
+    color: var(--mantine-color-blue-5);
+}
+
+.topText {
+  font-size: var(--mantine-font-size-sm);
+  color: var(--mantine-color-gray-8);
+}
