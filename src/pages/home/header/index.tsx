@@ -10,14 +10,10 @@ import {
   Menu,
   NavLink,
   UnstyledButton,
+  useMantineTheme,
 } from "@mantine/core";
 
-import {
-  IconChevronDown,
-  IconChevronRight,
-  IconMail,
-  IconPhoneCall,
-} from "@tabler/icons-react";
+import { ChevronDown, Mail, Phone, ChevronRight } from "lucide-react";
 import Logo from "assets/img/logo.png";
 import { Link } from "react-router";
 import { useDisclosure, useDocumentTitle } from "@mantine/hooks";
@@ -34,6 +30,8 @@ export default function Header() {
 }
 
 function Topbar() {
+  const theme = useMantineTheme();
+
   return (
     <div className="relative h-14 border-b bg-white">
       <Container size="lg" h={"100%"}>
@@ -50,12 +48,16 @@ function Topbar() {
           <div className="flex justify-center md:justify-end">
             <Group gap={25}>
               <Group gap={5}>
-                <IconPhoneCall size={17} className="text-sky-500" />
-                <span className="text-sm">+880 1234 56789</span>
+                <Phone size={15} fill={theme.colors.main[0]} strokeWidth={0} />
+                <span className="text-sm text-gray-800">+880 1234 56789</span>
               </Group>
               <Group gap={5}>
-                <IconMail size={17} className="text-sky-500" />
-                <Anchor href="mailto:support@yourmail.com" className="">
+                <Mail size={20} color="white" fill={theme.colors.main[0]} />
+                <Anchor
+                  href="mailto:support@yourmail.com"
+                  c="gray.8"
+                  underline="never"
+                >
                   support@yourmail.com
                 </Anchor>
               </Group>
@@ -126,12 +128,8 @@ function HeaderInner() {
                 <Menu.Target>
                   <UnstyledButton className="menu group relative px-3 py-6 font-semibold transition-all duration-300 ease-in-out hover:text-sky-500">
                     <Center>
-                      <span>Pages</span>
-                      <IconChevronDown
-                        className="ml-2"
-                        size={14}
-                        stroke={1.5}
-                      />
+                      <span className="mr-1">Pages</span>
+                      <ChevronDown size={18} />
                     </Center>
                     <span className="absolute bottom-0 left-0 h-1 w-0 rounded-t-lg bg-sky-500 transition-all duration-300 group-hover:w-full" />
                   </UnstyledButton>
@@ -182,11 +180,7 @@ function HeaderInner() {
           fw={500}
           className="hover:text-sky-500"
           rightSection={
-            <IconChevronRight
-              size="0.8rem"
-              stroke={1.5}
-              className="mantine-rotate-rtl"
-            />
+            <ChevronRight size="0.8rem" className="mantine-rotate-rtl" />
           }
         >
           <NavLink

@@ -102,7 +102,7 @@ const SingleSlider = ({ imgUrl }: { imgUrl: string }) => {
         </Container>
       </div>
 
-      <Image src={imgUrl} />
+      <Image src={imgUrl} h={{ base: 380, md: 600 }} />
     </Carousel.Slide>
   );
 };
